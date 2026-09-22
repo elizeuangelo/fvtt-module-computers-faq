@@ -6,17 +6,29 @@ Turn Foundry VTT journals into shared, interactive terminals: glowing screens, s
 
 Build a detective’s workstation, a forgotten bunker terminal, or a research station’s last surviving computer. Fill it with your story.
 
-![VANTAGE booting on an amber CRT monitor](https://github.com/elizeuangelo/fvtt-modules-computers-faq/raw/refs/heads/main/assets/vantage/boot.png)
+## Main features
 
-## How does it work?
-
-One player operates the computer while everyone with it open follows along. Navigation, typing, puzzles, power, and sound are shared. The rest of the party can offer helpful advice. Or shout “TRY PASSWORD AGAIN.”
-
+- **A shared computer for the whole party.** One player takes control while everyone with the computer open follows the action.
+- **Two operating systems.** Explore with VANTAGE’s mouse-and-keyboard menus or type commands in FERRO’s Unix-like shell.
 - **Files worth snooping through.** Organize notes, logs, clues, and questionable memos into folders and shortcuts.
 - **Doors worth unlocking.** Protect the terminal or individual folders with passwords and, in VANTAGE, Fallout-inspired word puzzles.
 - **Proper retro atmosphere.** Boot sequences, curved glass, screen glow, typing sounds, and a quiet CRT hum.
 - **Your own look.** Pick green, amber, white, or a custom tint. Adjust the monitor’s shape, lighting, and effects, or go with a flat, screen-only display.
 - **A volume knob for everyone.** Each viewer can adjust or mute their own computer audio.
+
+## Contents
+
+- [How does it work?](#how-does-it-work)
+- [Get your first computer running](#get-your-first-computer-running)
+- [Pick your operating system](#pick-your-operating-system)
+- [Customizable monitors](#make-it-look-like-it-belongs-in-your-world)
+- [A few things before you press Enter](#a-few-things-before-you-press-enter)
+
+![VANTAGE booting on an amber CRT monitor](https://github.com/elizeuangelo/fvtt-modules-computers-faq/raw/refs/heads/main/assets/vantage/boot.png)
+
+## How does it work?
+
+One player operates the computer while everyone with it open follows along. Navigation, typing, puzzles, power, and sound are shared. The rest of the party can offer helpful advice. Or shout “TRY PASSWORD AGAIN.”
 
 ![Take Control](https://github.com/elizeuangelo/fvtt-modules-computers-faq/raw/refs/heads/main/assets/take-control.png)
 
@@ -72,6 +84,28 @@ Go clean and readable, warm and amber, or gloriously battered. **Configuration �
 Changing the monitor’s appearance keeps the current session running. No dramatic reboot required.
 
 ![Monitor settings alongside an amber terminal archive](https://github.com/elizeuangelo/fvtt-modules-computers-faq/raw/refs/heads/main/assets/settings/monitor.png)
+
+The CRT also lets you adjust screen proportions, curvature, bezel color and visibility, ambient light, and glare. Here are a few looks you can create:
+
+### Green screen, light bezel
+
+A classic green terminal with a light-colored frame and glowing text.
+
+![A customizable green CRT monitor with bloom and a light bezel](https://github.com/elizeuangelo/fvtt-modules-computers-faq/raw/refs/heads/main/assets/monitors/green-bloom-light-bezel.png)
+
+### White screen, dark bezel
+
+White phosphor and a dark frame give the same computer a different feel.
+
+![A customizable white CRT monitor with bloom and a dark bezel](https://github.com/elizeuangelo/fvtt-modules-computers-faq/raw/refs/heads/main/assets/monitors/white-bloom-dark-bezel.png)
+
+### Warm amber, flat screen
+
+An amber display for forgotten archives, bunker consoles, and late-night investigations.
+
+![A customizable amber terminal display](https://github.com/elizeuangelo/fvtt-modules-computers-faq/raw/refs/heads/main/assets/monitors/ember-fullsize.png)
+
+For a flat display without a bezel or curvature, choose **Screen Only**. Tint, screen effects, and bloom remain configurable.
 
 ## A few things before you press Enter
 
