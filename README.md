@@ -21,6 +21,7 @@ Build a detective’s workstation, a forgotten bunker terminal, or a research st
 - [How does it work?](#how-does-it-work)
 - [Get your first computer running](#get-your-first-computer-running)
 - [Pick your operating system](#pick-your-operating-system)
+- [Create interactive programs](#create-interactive-programs)
 - [Customizable monitors](#make-it-look-like-it-belongs-in-your-world)
 - [A few things before you press Enter](#a-few-things-before-you-press-enter)
 
@@ -76,6 +77,14 @@ Let players leave notes or change files by enabling writing for both the compute
 FERRO supports password-protected folders. **Word-hacking folders currently require VANTAGE.**
 
 ![FERRO asking for a password before opening a detective’s private folder](https://github.com/elizeuangelo/fvtt-modules-computers-faq/raw/refs/heads/main/assets/ferro/locked-folder.png)
+
+## Create interactive programs
+
+In **Configuration → Files & Menu → New Program**, write a JavaScript file that players can launch from VANTAGE or FERRO. Programs can print text, reveal it gradually, ask for input or choices, and play shared sounds. The controller runs the script while everyone with the computer open sees its output.
+
+![A diagnostics Program being edited beside its shared terminal output](https://github.com/elizeuangelo/fvtt-modules-computers-faq/raw/refs/heads/main/assets/programs.png)
+
+See [Program files](programs.md) for launch commands, script helpers, an example, and what happens when a Program stops.
 
 ## Make it look like it belongs in your world
 
