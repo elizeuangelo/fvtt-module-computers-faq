@@ -6,6 +6,8 @@ Turn Foundry VTT journals into shared, interactive terminals: glowing screens, s
 
 Build a detective’s workstation, a forgotten bunker terminal, or a research station’s last surviving computer. Fill it with your story.
 
+Any issues with the module? Suggestions? [Access the FAQ repo](https://github.com/elizeuangelo/fvtt-module-computers-faq).
+
 ## Main features
 
 - **A shared computer for the whole party.** One player takes control while everyone with the computer open follows the action.
