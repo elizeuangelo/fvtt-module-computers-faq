@@ -5,11 +5,16 @@ FERRO. In **Configuration → Files & Menu → New Program**, enter a filename a
 edit the source. Save does not execute it. Edit opens the code editor again;
 rename, move, duplicate, shortcuts and folder duplication work like other files.
 
-**Execute as admin**, beside Program name, runs the script on the designated online
-GM with GM permissions. The player still controls its prompts; the GM need not open
-the computer. Without a GM, it displays **Service unavailable.** Normal Programs run
-with the controller's permissions. The editor warns about detected `save.world`
-references when admin is unchecked; warnings allow saving, syntax errors do not.
+All Programs always execute as admin on the designated online GM's client, with GM
+permissions. The player still controls its prompts; the GM need not open the computer.
+Without an online GM, it displays **Service unavailable.** before any script code
+executes. The program dialog states this behavior explicitly; there is no execution
+checkbox. Existing Programs follow the same rule regardless of their former admin
+flag. Syntax errors prevent saving.
+
+An offline-GM Program error also shows the controller a Foundry error notification:
+**Service unavailable. Programs can only run while a GM is online.** This applies
+to both launches and a GM disconnecting during execution.
 
 In VANTAGE, select the Program and press Enter or click its row. In FERRO:
 
@@ -47,7 +52,7 @@ script macros. Helpers are supplied as `terminal`, `program`, `audio`, `save` an
 | `audio.cue(name)` | Shared `key`, `output`, `success` or `lockout` sound. |
 | `await save.computer(key, value)` | Save JSON state on this computer. |
 | `load.computer(key)` | Read computer state synchronously. |
-| `await save.world(key, value)` | Save shared world state; requires Execute as admin. |
+| `await save.world(key, value)` | Save shared world state. |
 | `load.world(key)` | Read synchronized world state synchronously. |
 
 Use `await` for each typewriter, sleep, and prompt call, in sequence. Immediate
@@ -58,7 +63,7 @@ and answers. These prompts are public gameplay input, not secret credentials.
 `program.args` contains FERRO arguments (an empty array for VANTAGE).
 `program.computer` is the JournalEntry, `program.file` is the JournalEntryPage,
 `program.os` is `terminal` or `ferro`, and `program.signal` is the run's AbortSignal.
-`program.controller` is the operating Foundry User. In admin Programs, `game.user`
+`program.controller` is the operating Foundry User. In every Program, `game.user`
 is the GM; use `program.controller.id` to target the player. Document actions use
 the executor's permissions; client-local Foundry UI appears on that client's screen.
 
@@ -98,7 +103,6 @@ Saves replace a key's value; loads return independent copies. Use `await` for sa
 
 ```js
 await save.computer("visits", (load.computer("visits") ?? 0) + 1);
-// Requires Execute as admin:
 await save.world("relayOnline", true);
 ```
 
@@ -110,7 +114,7 @@ gameplay data. Concurrent load/change/save sequences are not atomic.
 
 ## Execution and lifecycle
 
-One execution service runs the source once on the controller or designated GM.
+One execution service runs the source once on the designated online GM.
 The coordinator validates output against control, power, document access and folder
 gates; other clients only render serializable output. Typewriter text and start
 time travel once, with local animation and rate-limited typing sounds. Sounds use
@@ -120,14 +124,14 @@ the current transcript and prompt without executing code or replaying old cues.
 Escape stops and returns to the launching menu/shell. Completion or error leaves
 the output visible until Escape. Taking control, losing control/connection, closing
 the controller window, power-off, or losing access cancels the runner's helpers.
-GM departure or replacement ends admin execution with **Service unavailable.**
+GM departure or replacement ends a running Program with **Service unavailable.**
 Reopening or transferring control never resumes or reruns JavaScript. Each new
-launch starts fresh. Source and admin-flag edits affect the next launch; appearance changes do
+launch starts fresh. Source edits affect the next launch; appearance changes do
 not restart a running Program. Source, names and file metadata persist; transcripts,
 prompts and animations do not. Explicitly saved state persists independently.
 
-Programs are trusted macro-like code, not a sandbox. GM execution requires the
-author's admin flag. Foundry actions already performed cannot be rolled
+Programs are trusted macro-like code, not a sandbox. All Programs execute with GM
+permissions. Foundry actions already performed cannot be rolled
 back when a run stops. Helpers and `program.signal` cooperate with cancellation;
 arbitrary timers, listeners and external async operations need the author's own
 cleanup. A synchronous infinite loop can block the browser and cannot be stopped
