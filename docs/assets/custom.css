@@ -1,0 +1,86 @@
+/* Keep TypeDoc's navigation, search, and responsive layout; theme its native tokens. */
+:root {
+  --light-color-background: #f3f7f3;
+  --light-color-background-secondary: #e8efe9;
+  --light-color-background-active: #d4e5d7;
+  --light-color-text: #203b29;
+  --light-color-contrast-text: #122a1a;
+  --light-color-text-aside: #486852;
+  --light-color-link: #19623c;
+  --light-color-accent: #b7cebe;
+  --light-color-active-menu-item: #d4e5d7;
+  --light-color-focus-outline: #19623c;
+  --dark-color-background: #0c1210;
+  --dark-color-background-secondary: #121d17;
+  --dark-color-background-active: #1e3427;
+  --dark-color-text: #d0dfd4;
+  --dark-color-contrast-text: #effff3;
+  --dark-color-text-aside: #93ad9c;
+  --dark-color-link: #83eba7;
+  --dark-color-accent: #2c4435;
+  --dark-color-active-menu-item: #1e3427;
+  --dark-color-focus-outline: #83eba7;
+  --dark-color-icon-background: #121d17;
+  --dark-color-icon-text: #83eba7;
+  --dark-color-comment-tag: #1e3427;
+  --dark-color-comment-tag-text: #d0dfd4;
+  --dark-color-ts-namespace: #83eba7;
+  --dark-color-ts-function: #9dc7ef;
+  --dark-color-ts-variable: #d0dfd4;
+  --dark-color-ts-property: #d0dfd4;
+  --dark-color-ts-type-alias: #e4bf85;
+  --light-color-ts-namespace: #19623c;
+  --light-color-ts-function: #235a7a;
+  --light-color-ts-variable: #203b29;
+  --light-color-ts-type-alias: #785419;
+  --font-mono: "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  color-scheme: var(--color-scheme, dark);
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+h1, h2, h3, .tsd-page-toolbar, .site-menu, .tsd-signature, code, pre {
+  font-family: var(--font-mono);
+}
+
+h1 { font-size: 2rem; letter-spacing: -0.04em; line-height: 1.25; }
+h2 { font-size: 1.3rem; letter-spacing: -0.025em; }
+h3 { font-size: 1.05rem; }
+
+.tsd-page-toolbar { border-bottom: 1px solid var(--color-accent); }
+.tsd-page-toolbar .title { font-size: 0.95rem; font-weight: 650; }
+.tsd-page-toolbar a { text-decoration: none; }
+.site-menu { font-size: 0.86rem; line-height: 1.5; }
+.site-menu a { border-radius: 3px; }
+.site-menu a.current { box-shadow: inset 2px 0 var(--color-link); }
+.tsd-navigation a:hover { color: var(--color-link); }
+.tsd-page-title { border-bottom: 1px solid var(--color-accent); margin-bottom: 2rem; padding-bottom: 1rem; }
+.tsd-page-title:empty { display: none; }
+.tsd-typography { line-height: 1.7; }
+.tsd-typography p { max-width: 76ch; }
+.tsd-typography a:hover { text-decoration: underline; }
+.tsd-typography pre { border: 1px solid var(--color-accent); border-radius: 4px; }
+.tsd-typography code, .tsd-signature { font-size: 0.85rem; }
+.tsd-signature { border-left: 2px solid var(--color-link); line-height: 1.7; }
+.tsd-typography table { width: 100%; }
+.tsd-typography th { font-family: var(--font-mono); font-size: 0.85rem; text-align: left; }
+.tsd-typography blockquote { border-left-color: var(--color-link); }
+button, input, select { font-family: inherit; font-size: 0.9rem; }
+select { color: var(--color-text); background: var(--color-background-secondary); border: 1px solid var(--color-accent); }
+:focus-visible { outline: 2px solid var(--color-focus-outline); outline-offset: 3px; }
+footer { font-size: 0.8rem; }
+
+@media (max-width: 769px) {
+  h1 { font-size: 1.6rem; }
+  .tsd-page-toolbar .title { font-size: 0.8rem; }
+  .tsd-page-toolbar .title { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tsd-page-title { margin-bottom: 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}

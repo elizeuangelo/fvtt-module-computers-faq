@@ -1,0 +1,45 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Download simulation | Computers · Program API v1.2.0</title><meta name="description" content="Documentation for Computers · Program API v1.2.0"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><link rel="stylesheet" href="../assets/custom.css"/><script defer src="../assets/main.js"></script><script defer src="../assets/custom.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container"><a href="../index.html" class="title">Computers · Program API v1.2.0</a>
+<div id="tsd-toolbar-links"><a href="https://github.com/elizeuangelo/fvtt-module-computers-faq">FAQ</a></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/>
+<ul role="listbox" id="tsd-search-results"></ul>
+<div id="tsd-search-status" aria-live="polite" aria-atomic="true">
+<div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></header>
+<div class="container container-main">
+<div class="col-content">
+<div class="tsd-page-title">
+<ul class="tsd-breadcrumb" aria-label="Breadcrumb">
+<li><a href="Examples.html">Examples</a></li>
+<li><a href="" aria-current="page">Download simulation</a></li></ul></div>
+<div class="tsd-panel tsd-typography"><h1 id="download-simulation" class="tsd-anchor-link">Download simulation<a href="#download-simulation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<p>Simulate a transfer by replacing the current row, then reveal a prepared clue.
+This is a gameplay animation; it does not fetch a network resource.</p>
+<pre><code class="js"><span class="hl-1">terminal.</span><span class="hl-2">clear</span><span class="hl-1">();</span><br/><span class="hl-0">await</span><span class="hl-1"> terminal.</span><span class="hl-2">typeLine</span><span class="hl-1">(</span><span class="hl-3">&quot;FETCHING ARCHIVE...&quot;</span><span class="hl-1">);</span><br/><span class="hl-0">for</span><span class="hl-1"> (</span><span class="hl-0">let</span><span class="hl-1"> percent </span><span class="hl-0">=</span><span class="hl-1"> </span><span class="hl-4">0</span><span class="hl-1">; percent </span><span class="hl-0">&lt;=</span><span class="hl-1"> </span><span class="hl-4">100</span><span class="hl-1">; percent </span><span class="hl-0">+=</span><span class="hl-1"> </span><span class="hl-4">10</span><span class="hl-1">) {</span><br/><span class="hl-1">  terminal.</span><span class="hl-2">clearLine</span><span class="hl-1">();</span><br/><span class="hl-1">  terminal.</span><span class="hl-2">write</span><span class="hl-1">(</span><span class="hl-3">`Downloading: ${</span><span class="hl-1">percent</span><span class="hl-3">}%`</span><span class="hl-1">);</span><br/><span class="hl-1">  </span><span class="hl-0">await</span><span class="hl-1"> terminal.</span><span class="hl-2">sleep</span><span class="hl-1">(</span><span class="hl-4">150</span><span class="hl-1">);</span><br/><span class="hl-1">}</span><br/><span class="hl-1">terminal.</span><span class="hl-2">writeLine</span><span class="hl-1">();</span><br/><span class="hl-1">terminal.</span><span class="hl-2">writeLine</span><span class="hl-1">(</span><span class="hl-3">&quot;TRANSMISSION RECOVERED&quot;</span><span class="hl-1">);</span><br/><span class="hl-1">terminal.</span><span class="hl-2">writeLine</span><span class="hl-1">(</span><span class="hl-3">&quot;Use the east entrance. Bring the access card.&quot;</span><span class="hl-1">);</span><br/><span class="hl-1">audio.</span><span class="hl-2">cue</span><span class="hl-1">(</span><span class="hl-3">&quot;success&quot;</span><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
+
+<p><a href="../media/download.js" download="download.js">Download the Program</a></p>
+<h2 id="expected-behavior" class="tsd-anchor-link">Expected behavior<a href="#expected-behavior" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>The counter changes from 0% to 100% on one row, then the transmission appears below
+it. Escape during a pause cancels the Program and returns to the launching menu or
+shell. No transcript or progress percentage is saved.</p>
+<p>Uses <a href="../functions/terminal.clearLine.html" class="tsd-kind-function"> terminal.clearLine</a>, <a href="../functions/terminal.write.html" class="tsd-kind-function"> terminal.write</a>, <a href="../functions/terminal.sleep.html" class="tsd-kind-function"> terminal.sleep</a>,
+<a href="../functions/terminal.writeLine.html" class="tsd-kind-function"> terminal.writeLine</a>, and <a href="../functions/audio.cue.html" class="tsd-kind-function"> audio.cue</a>.</p>
+</div></div>
+<div class="col-sidebar">
+<div class="page-menu">
+<div class="tsd-navigation settings">
+<details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>On This Page</h3></summary>
+<div class="tsd-accordion-details"><a href="#download-simulation"><span>Download simulation</span></a>
+<ul>
+<li><a href="#expected-behavior"><span>Expected behavior</span></a></li></ul></div></details></div>
+<div class="site-menu">
+<nav id="tsd-sidebar-links" class="tsd-navigation"><a href="https://github.com/elizeuangelo/fvtt-module-computers-faq" class="tsd-nav-link">FAQ</a></nav>
+<nav class="tsd-navigation"><a href="../modules.html">Computers · Program API v1.2.0</a>
+<ul class="tsd-small-nested-navigation" id="tsd-nav-container">
+<li>Loading...</li></ul></nav></div></div></div><footer>
+<p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer>
+<div class="overlay"></div></body></html>
